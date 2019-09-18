@@ -1,0 +1,4 @@
+{{post.caption}} <button (click)="remove()" class="btn btn-link btn-sm">X</button>
+<a [routerLink]="['posts/detail', post.id]">
+  <img appHighlight="black" class="img-thumbnail" src="{{post.imageUrl}}" alt="">
+</a>

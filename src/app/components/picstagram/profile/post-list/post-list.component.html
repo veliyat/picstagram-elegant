@@ -1,0 +1,19 @@
+<hr>
+
+<div *ngIf="posts.length === 0; else postList" class="alert alert-info">No Posts to Display.</div>
+
+<ng-template #postList>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)]="query" placeholder="Search...">
+    </div>
+  </div>
+
+  <!-- <button (click)="handleClick()">Click me</button> -->
+
+  <div class="row">
+    <div *ngFor="let post of posts | search:query" class="col col-md-4 mt-2">
+      <app-post-item [post]="post"></app-post-item>
+    </div>
+  </div>
+</ng-template>
